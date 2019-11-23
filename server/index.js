@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const compression = require("compression");
@@ -17,10 +18,12 @@ app.get("/api/test", (req, res) => {
 
 // Serve production build of client
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("../client/build"));
+  app.use(express.static(path.resolve(__dirname, "..", "client", "build")));
 
   app.get("*", (req, res) => {
-    res.sendFile("../client/build/index.html");
+    res.sendFile(
+      path.resolve(__dirname, "..", "client", "build", "index.html")
+    );
   });
 }
 
