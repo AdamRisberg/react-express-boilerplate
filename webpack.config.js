@@ -1,11 +1,12 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./client/src/index.js",
   output: {
     path: path.resolve(__dirname, "client", "build"),
-    filename: "bundle.js"
+    filename: "static/js/[name].[chunkhash].js"
   },
   module: {
     rules: [
@@ -17,8 +18,24 @@ module.exports = {
         }
       },
       {
+        test: /\.module\.css$/,
+        use: [
+          "style-loader",
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              modules: {
+                localIdentName: "[name]__[local]__[hash:base64:5]"
+              }
+            }
+          }
+        ]
+      },
+      {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader"],
+        exclude: /\.module\.css$/
       },
       {
         test: /\.html$/,
@@ -29,6 +46,10 @@ module.exports = {
     ]
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: "static/css/[name].[chunkhash].css",
+      chunkFilename: "static/css/[id].[hash].css"
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "client", "public", "index.html"),
       favicon: "./client/public/favicon.ico"
