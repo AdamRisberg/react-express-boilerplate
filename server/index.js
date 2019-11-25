@@ -13,7 +13,7 @@ app.use(express.static(path.resolve(__dirname, "public")));
 
 // Demo api route
 app.get("/api/test", (req, res) => {
-  res.json({ text: "Successfully fetched data from server." });
+  res.json({ text: "Demo response" });
 });
 
 // Serve production build of client
