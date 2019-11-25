@@ -5,7 +5,7 @@ function App() {
   const [text, setText] = React.useState("");
 
   React.useEffect(() => {
-    fetch("/api/test")
+    fetch("/api/demo")
       .then(res => res.json())
       .then(data => {
         setText(JSON.stringify(data, null, 2));
@@ -19,16 +19,26 @@ function App() {
   return (
     <div className="app">
       <h1>React Express Boilerplate</h1>
+      {/* <p>
+        React Express Boilerplate uses proxies to allow requests to be made to
+        the express server during development, as demonstrated below...
+      </p> */}
+      <p className="app-info">
+        React Express Boilerplate uses webpack-dev-server with proxies to allow
+        requests to be made to the express server during development, as
+        demonstrated below...
+      </p>
       <div className="app-container">
         <p className="app-json">{text}</p>
         <p className="app-paragraph">
-          This json was fetched from the backend using the path, "/api/test".
+          This JSON was fetched from the express server using the path:
+          "/api/test".
         </p>
       </div>
       <div className="app-container">
-        <img className="app-image" src="/images/demo-image.jpeg" alt="" />
+        <img className="app-image" src="/images/demo-image.jpg" alt="" />
         <p className="app-paragraph">
-          This image was loaded from the server/public/images folder using
+          This image was loaded from the express server using
           src="/images/demo-image.jpeg".
         </p>
       </div>

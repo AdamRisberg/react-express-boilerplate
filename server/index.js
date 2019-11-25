@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 app.use(express.static(path.resolve(__dirname, "public")));
 
 // Demo api route
-app.get("/api/test", (req, res) => {
-  res.json({ text: "Demo response" });
+app.get("/api/demo", (req, res) => {
+  res.json({ api: "demo response" });
 });
 
 // Serve production build of client
