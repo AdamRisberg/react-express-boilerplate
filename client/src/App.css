@@ -1,7 +1,8 @@
 .app {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .app-container {
@@ -24,5 +25,5 @@
 }
 
 .app-paragraph {
-  padding: 0 10px;
+  padding: 0 15px;
 }
