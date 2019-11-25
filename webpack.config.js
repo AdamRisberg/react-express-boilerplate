@@ -100,6 +100,6 @@ module.exports = (_, argv) => {
       },
       historyApiFallback: true
     },
-    stats: "minimal"
+    stats: "errors-warnings"
   };
 };

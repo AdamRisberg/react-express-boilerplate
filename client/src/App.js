@@ -19,10 +19,6 @@ function App() {
   return (
     <div className="app">
       <h1>React Express Boilerplate</h1>
-      {/* <p>
-        React Express Boilerplate uses proxies to allow requests to be made to
-        the express server during development, as demonstrated below...
-      </p> */}
       <p className="app-info">
         React Express Boilerplate uses webpack-dev-server with proxies to allow
         requests to be made to the express server during development, as
