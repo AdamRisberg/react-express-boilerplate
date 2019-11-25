@@ -1,7 +1,7 @@
 {
   "name": "react-express-boilerplate",
   "version": "1.0.0",
-  "description": "Boilerplate for React and Node/Express based web apps",
+  "description": "Boilerplate for creating full-stack web apps using React and Node/Express.",
   "scripts": {
     "build": "webpack --mode production",
     "server": "nodemon server/index.js --ignore client/",

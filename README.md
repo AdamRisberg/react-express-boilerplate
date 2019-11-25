@@ -2,7 +2,7 @@
 
 Boilerplate for React and Node/Express based web apps. For those times when you want to get up and running quickly with a full-stack app without having to manage the client and server separately.
 
-## Client Features
+### Client Features
 
 - React
 - Babel
@@ -13,7 +13,7 @@ Boilerplate for React and Node/Express based web apps. For those times when you 
 - Auto restart on file changes
 - Proxy for communication with server during development
 
-## Server Features
+### Server Features
 
 - Express
 - body-parser
@@ -63,7 +63,7 @@ import image from "./image.jpg"
 
 ### From the Server
 
-Add images to the server/public/images folder. This works in production and development modes (thanks to the proxy path). You can then access them as usual...
+Add images to the server/public/images folder. This works in production and development modes (thanks to the proxy path). You can then access them normally...
 
 ```JSX
 <img src="/images/image.jpg">
