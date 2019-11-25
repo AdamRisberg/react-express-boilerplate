@@ -1,6 +1,6 @@
 # React Express Boilerplate
 
-Boilerplate for React and Node/Express based web apps.
+Boilerplate for React and Node/Express based web apps. For those times when you want to get up and running quickly with a full-stack app without having to manage the client and server separately.
 
 ## Client Features
 
