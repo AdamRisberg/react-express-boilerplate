@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 
 function App() {
   const [text, setText] = React.useState("");
@@ -7,18 +8,30 @@ function App() {
     fetch("/api/test")
       .then(res => res.json())
       .then(data => {
-        setText(data.text);
+        setText(JSON.stringify(data, null, 2));
       })
       .catch(err => {
         setText("Failed to fetch data from server.");
         console.log(err);
       });
-  });
+  }, []);
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className="app">
       <h1>React Express Boilerplate</h1>
-      <p>{text}</p>
+      <div className="app-container">
+        <p className="app-json">{text}</p>
+        <p className="app-paragraph">
+          This json was fetched from the backend using the path, "/api/test".
+        </p>
+      </div>
+      <div className="app-container">
+        <img className="app-image" src="/images/demo-image.jpeg" alt="" />
+        <p className="app-paragraph">
+          This image was loaded from the server/public/images folder using
+          src="/images/demo-image.jpeg".
+        </p>
+      </div>
     </div>
   );
 }

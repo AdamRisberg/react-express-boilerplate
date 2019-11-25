@@ -1,0 +1,28 @@
+.app {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.app-container {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.app-json {
+  padding: 10px;
+  background-color: #111;
+  color: #fff;
+  margin-top: 0;
+}
+
+.app-image {
+  width: 100%;
+  display: block;
+}
+
+.app-paragraph {
+  padding: 0 10px;
+}
